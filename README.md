@@ -61,8 +61,12 @@ The following ROOT script converts optical hits data from GATE output file (in R
 
 root -b -l -q './PhotonCountingToChargeByPixelID.C++("./PhotonToCharge.cfg")' > ./output/rootoutput.txt&
 
+Before running the ROOT script, it is important to define the output ("fout") and input ("fin") files.
+
 You can generate a charge spectrum using the command:
 
 root -b -l -q './GenerateSpectrum.C++()' > ./output/ionsource/GenerateSpectrum.txt&
+
+Before running the ROOT script, it is important to define the input ("fin1") and output files.
 
 Notice that the code lines for waveform generation are commented, because it is (more) computing intensive. The waveform is represented using the TGraph ROOT class.
