@@ -1,0 +1,14 @@
+###### fonte de ion para sodio 22 ###############
+/gate/source/addSource       Na gps
+/gate/source/Na/gps/particle ion
+/gate/source/Na/gps/ion 11 22 0 0
+/gate/source/Na/gps/monoenergy 0. keV
+/gate/source/Na/setForcedUnstableFlag true
+/gate/source/Na/useDefaultHalfLife
+/gate/source/Na/setActivity                    1e9 becquerel
+/gate/source/Na/gps/type                       Volume
+/gate/source/Na/gps/shape                      Sphere
+/gate/source/Na/gps/radius                     0.5 mm
+/gate/source/Na/gps/angtype                    iso
+/gate/source/Na/gps/centre                     {X} {Y} -8.0 mm
+

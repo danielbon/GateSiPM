@@ -1,0 +1,24 @@
+/gate/output/analysis/disable
+/gate/output/fastanalysis/enable
+
+#/gate/digitizer/name OpticalSingles
+#/gate/digitizer/insert singleChain
+#/gate/digitizer/OpticalSingles/setInputName Singles
+#/gate/digitizer/OpticalSingles/insert  opticaladder
+#/gate/digitizer/OpticalSingles/insert  readout
+#/gate/digitizer/OpticalSingles/readout/setDepth 2
+#/gate/digitizer/OpticalSingles/insert upholder
+#/gate/digitizer/OpticalSingles/upholder/setUphold 1.0 keV
+#/gate/digitizer/OpticalSingles/insert thresholder
+#/gate/digitizer/OpticalSingles/thresholder/setThreshold 1.0 eV
+
+/gate/digitizer/name NotOpticalSingles
+/gate/digitizer/insert singleChain
+/gate/digitizer/NotOpticalSingles/setInputName Singles
+/gate/digitizer/NotOpticalSingles/insert  adder
+/gate/digitizer/NotOpticalSingles/insert  readout
+/gate/digitizer/NotOpticalSingles/readout/setDepth 1
+/gate/digitizer/NotOpticalSingles/insert thresholder
+/gate/digitizer/NotOpticalSingles/thresholder/setThreshold 1.0 keV
+
+

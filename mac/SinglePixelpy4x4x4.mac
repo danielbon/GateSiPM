@@ -1,0 +1,87 @@
+# This macro describes a PET monolithic crystal detector block
+# the block consists of a 3.72 x 3.72 x 4.0 mm3 crystal coupled to a SiPM array
+# of 1 x 1 elements with 3.72 x 3.72 mm2 each one.
+
+#### Using Optical system ####
+/gate/world/daughters/name OpticalSystem
+/gate/world/daughters/insert box
+/gate/OpticalSystem/setMaterial Air
+/gate/OpticalSystem/geometry/setXLength 28.52 mm
+/gate/OpticalSystem/geometry/setYLength 28.52 mm
+/gate/OpticalSystem/geometry/setZLength 8.0 mm
+/gate/OpticalSystem/vis/forceWireframe 1
+
+/gate/OpticalSystem/daughters/name module
+/gate/OpticalSystem/daughters/insert box
+/gate/module/geometry/setXLength 8.52 mm
+/gate/module/geometry/setYLength 8.52 mm
+/gate/module/geometry/setZLength 8.0 mm
+/gate/module/setMaterial {WrappingMaterial}
+/gate/module/vis/forceWireframe
+
+/gate/module/daughters/name crystal
+/gate/module/daughters/insert box
+/gate/crystal/geometry/setXLength 3.72 mm
+/gate/crystal/geometry/setYLength 3.72 mm
+/gate/crystal/geometry/setZLength 4.0 mm
+/gate/crystal/setMaterial {CrystalMaterial}
+/gate/crystal/placement/setTranslation    0. 0. 0. mm
+/gate/crystal/vis/setColor yellow
+
+/gate/module/daughters/name TopCrystalLayer
+/gate/module/daughters/insert box
+/gate/TopCrystalLayer/geometry/setXLength 3.72 mm
+/gate/TopCrystalLayer/geometry/setYLength 3.72 mm
+/gate/TopCrystalLayer/geometry/setZLength 1.0 mm
+/gate/TopCrystalLayer/setMaterial {WrappingMaterial}
+/gate/TopCrystalLayer/vis/setColor yellow
+/gate/TopCrystalLayer/placement/setTranslation 0. 0. -2.5 mm
+
+/gate/module/daughters/name OpticalCoupling
+/gate/module/daughters/insert box
+/gate/OpticalCoupling/geometry/setXLength 3.72 mm
+/gate/OpticalCoupling/geometry/setYLength 3.72 mm
+/gate/OpticalCoupling/geometry/setZLength 0.01 mm
+/gate/OpticalCoupling/setMaterial VisiloxV-788
+/gate/OpticalCoupling/vis/setColor yellow
+/gate/OpticalCoupling/placement/setTranslation 0. 0. 2.005 mm
+
+/gate/module/daughters/name SiPMCover
+/gate/module/daughters/insert box
+/gate/SiPMCover/geometry/setXLength 3.72 mm
+/gate/SiPMCover/geometry/setYLength 3.72 mm
+/gate/SiPMCover/geometry/setZLength 0.4 mm
+/gate/SiPMCover/setMaterial Quartz
+/gate/SiPMCover/vis/setColor blue
+/gate/SiPMCover/placement/setTranslation 0. 0. 2.21 mm
+/gate/SiPMCover/repeaters/insert              cubicArray
+/gate/SiPMCover/cubicArray/setRepeatNumberX 1
+/gate/SiPMCover/cubicArray/setRepeatNumberY 1
+/gate/SiPMCover/cubicArray/setRepeatNumberZ 1
+/gate/SiPMCover/cubicArray/setRepeatVector 3.94 3.94 0. mm
+
+/gate/module/daughters/name             SiPM
+/gate/module/daughters/insert           box
+/gate/SiPM/geometry/setXLength 3.72 mm
+/gate/SiPM/geometry/setYLength 3.72 mm
+/gate/SiPM/geometry/setZLength 0.1 mm
+/gate/SiPM/setMaterial                   Silicon
+/gate/SiPM/vis/setColor                  red
+/gate/SiPM/placement/setTranslation 0. 0. 2.4599999999999995 mm
+/gate/SiPM/repeaters/insert              cubicArray
+/gate/SiPM/cubicArray/setRepeatNumberX 1
+/gate/SiPM/cubicArray/setRepeatNumberY 1
+/gate/SiPM/cubicArray/setRepeatNumberZ  1
+/gate/SiPM/cubicArray/setRepeatVector 3.94 3.94 0. mm
+
+/gate/module/repeaters/insert cubicArray
+/gate/module/cubicArray/setRepeatNumberX 1
+/gate/module/cubicArray/setRepeatNumberY 1
+/gate/module/cubicArray/setRepeatNumberZ 1
+/gate/module/cubicArray/setRepeatVector 8.52 8.52 0. mm
+
+/gate/systems/OpticalSystem/pixel/attach SiPMCover
+/gate/systems/OpticalSystem/crystal/attach crystal
+
+/gate/crystal/attachCrystalSD
+/gate/SiPMCover/attachCrystalSD

@@ -1,0 +1,10 @@
+
+Processing ./GenerateSpectrum.C++()...
+Opening file output
+ number of entries chosen = 15433
+ bin1 = 56
+ bin2 = 67
+ *****Results from our simulated data**** 
+ Mean charge = 29919.2(32.3915)
+ FWHM charge = 4441.76(76.9664)
+ Charge resolution= 14.8459(0.257248)%

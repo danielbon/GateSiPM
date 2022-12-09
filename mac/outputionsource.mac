@@ -1,0 +1,90 @@
+# == OUTPUT
+
+#/gate/output/fastanalysis/enable
+#/gate/output/analysis/enable
+
+# === ASCII ===
+/gate/output/ascii/disable 
+
+# === ROOT ===
+#/gate/output/root/enable
+#/gate/output/root/setFileName output/ionsource/outputr{i}{j}
+#/gate/output/root/setRootHitFlag           1
+#/gate/output/root/setRootSinglesFlag       0
+#/gate/output/root/setRootCoincidencesFlag 0
+#/gate/output/root/setRootNtupleFlag       1
+#/gate/output/root/setRootOpticalFlag      1
+
+/gate/output/tree/enable
+#/gate/output/tree/addFileName /tmp/p.npy
+/gate/output/tree/addFileName output/ionsource/output{i}{j}.root
+/gate/output/tree/hits/enable
+/gate/output/tree/hits/branches/volumeIDs/disable
+#/gate/output/tree/hits/branches/PDGEncoding/disable
+/gate/output/tree/hits/branches/trackID/disable
+/gate/output/tree/hits/branches/parentID/disable
+/gate/output/tree/hits/branches/trackLocalTime/disable
+#/gate/output/tree/hits/branches/time/disable
+/gate/output/tree/hits/branches/runID/disable
+#/gate/output/tree/hits/branches/eventID/disable
+/gate/output/tree/hits/branches/sourceID/disable
+/gate/output/tree/hits/branches/primaryID/disable
+#/gate/output/tree/hits/branches/posX/disable
+#/gate/output/tree/hits/branches/posY/disable
+#/gate/output/tree/hits/branches/posZ/disable
+/gate/output/tree/hits/branches/localPosX/disable
+/gate/output/tree/hits/branches/localPosY/disable
+/gate/output/tree/hits/branches/localPosZ/disable
+#/gate/output/tree/hits/branches/momDirX/disable
+#/gate/output/tree/hits/branches/momDirY/disable
+#/gate/output/tree/hits/branches/momDirZ/disable
+#/gate/output/tree/hits/branches/edep/disable
+/gate/output/tree/hits/branches/stepLength/disable
+/gate/output/tree/hits/branches/trackLength/disable
+/gate/output/tree/hits/branches/rotationAngle/disable
+/gate/output/tree/hits/branches/axialPos/disable
+/gate/output/tree/hits/branches/processName/disable
+/gate/output/tree/hits/branches/comptVolName/disable
+/gate/output/tree/hits/branches/RayleighVolName/disable
+/gate/output/tree/hits/branches/sourcePosX/disable
+/gate/output/tree/hits/branches/sourcePosY/disable
+/gate/output/tree/hits/branches/sourcePosZ/disable
+/gate/output/tree/hits/branches/nPhantomCompton/disable
+/gate/output/tree/hits/branches/nCrystalCompton/disable
+/gate/output/tree/hits/branches/nPhantomRayleigh/disable
+/gate/output/tree/hits/branches/nCrystalRayleigh/disable
+/gate/output/tree/hits/branches/gammaType/disable
+/gate/output/tree/hits/branches/decayType/disable
+/gate/output/tree/hits/branches/sourceType/disable
+/gate/output/tree/addCollection NotOpticalSingles
+/gate/output/tree/Singles/branches/runID/disable
+#/gate/output/tree/Singles/branches/eventID/disable
+/gate/output/tree/Singles/branches/sourceID/disable
+/gate/output/tree/Singles/branches/sourcePosX/disable
+/gate/output/tree/Singles/branches/sourcePosY/disable
+/gate/output/tree/Singles/branches/sourcePosZ/disable
+#/gate/output/tree/Singles/branches/globalPosX/disable
+#/gate/output/tree/Singles/branches/globalPosY/disable
+#/gate/output/tree/Singles/branches/globalPosZ/disable
+#/gate/output/tree/Singles/branches/time/disable
+#/gate/output/tree/Singles/branches/energy/disable
+/gate/output/tree/Singles/branches/comptonPhantom/disable
+/gate/output/tree/Singles/branches/comptonCrystal/disable
+/gate/output/tree/Singles/branches/RayleighPhantom/disable
+/gate/output/tree/Singles/branches/RayleighCrystal/disable
+/gate/output/tree/Singles/branches/comptVolName/disable
+/gate/output/tree/Singles/branches/RayleighVolName/disable
+/gate/output/tree/Singles/branches/rotationAngle/disable
+/gate/output/tree/Singles/branches/axialPos/disable
+#/gate/output/tree/addCollection Coincidences
+#/gate/output/tree/Coincidences/branches/eventID/disable
+
+# Specific OpticalSystem image output
+#/gate/output/projection/enable 
+#/gate/output/projection/setFileName       output/ionsource/optical_projection{i}{j}
+#/gate/output/projection/projectionPlane   XY
+#/gate/output/projection/pixelNumberX  	  32 
+#/gate/output/projection/pixelNumberY  	  32
+#/gate/output/projection/pixelSizeX    	  0.9 mm 
+#/gate/output/projection/pixelSizeY    	  0.9 mm 
+

@@ -1,0 +1,18 @@
+
+#/gate/physics/addProcess Scintillation
+#/gate/physics/addProcess OpticalAbsorption
+#/gate/physics/addProcess OpticalRayleigh
+#/gate/physics/addProcess OpticalBoundary
+#/gate/physics/addProcess OpticalMie
+#/gate/physics/addProcess OpticalWLS
+
+/gate/physics/addPhysicsList emstandard_opt4
+/gate/physics/addPhysicsList optical
+/gate/physics/addProcess  Scintillation
+
+/gate/physics/addProcess RadioactiveDecay
+
+/gate/physics/processList Enabled
+/gate/physics/processList Initialized
+
+

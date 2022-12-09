@@ -1,0 +1,62 @@
+# Gate -a [WrappingMaterial,PTFE][CrystalMaterial,LYSO-Ce-Hilger][LateralSurface,PTFE_wrapped][TopSurface,PTFE_wrapped][X,0][Y,0][i,0][j,0] mac/mainMacroMono.mac > output/Mono511keV/term_output00.txt&
+
+# == VISUALIZATION AND VERBOSE
+/control/execute mac/verbose.mac
+/vis/disable
+#/control/execute mac/visualization.mac
+
+# == WORLD
+/gate/geometry/setMaterialDatabase    input/GateMaterials.db
+/gate/world/geometry/setXLength 60. cm
+/gate/world/geometry/setYLength 60. cm
+/gate/world/geometry/setZLength 60. cm
+/gate/world/setMaterial Air
+#/gate/world/daughters/insert 3axes
+
+# == PET detector
+/control/execute mac/SinglePixelpy.mac
+
+#/gate/geometry/rebuild
+
+# == PHYSICS
+/control/execute mac/physics.mac
+
+# == CUTS
+/control/execute mac/cuts.mac
+
+# == ACTOR
+/gate/actor/addActor   SimulationStatisticActor stat
+/gate/actor/stat/save  output/Mono511keV/stat{i}{j}.txt
+/gate/actor/stat/saveEveryNEvents 100
+
+#/gate/actor/addActor KillActor       MyActor
+#/gate/actor/MyActor/save             MyOutputFile.txt
+#/gate/actor/MyActor/attachTo         crystal
+
+/gate/run/initialize
+
+# == OPTICAL SURFACES
+/control/execute mac/opticalsurfacespy.mac
+#/control/execute mac/opticalsurfacesgossippy.mac
+
+#/geometry/test/run
+
+# == DIGITIZER
+/control/execute mac/digitizer.mac
+
+# == SOURCE
+/control/execute mac/gamma_mono.mac
+#/control/execute mac/ion_source.mac
+/gate/source/list
+
+# == OUTPUT
+/control/execute mac/output.mac
+#/control/execute mac/outputionsource.mac
+
+# == START ACQUISITION
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+/gate/application/setTimeSlice 30 ms
+/gate/application/setTimeStart 0. s
+/gate/application/setTimeStop  30 ms
+/gate/application/startDAQ

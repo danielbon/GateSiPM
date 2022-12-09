@@ -1,0 +1,22 @@
+/vis/open OGLI
+#/vis/open VRML2FILE
+/vis/viewer/reset
+/vis/viewer/set/viewpointThetaPhi 45 45
+#/vis/viewer/set/viewpointThetaPhi 90 0
+/vis/viewer/zoom 8
+/vis/drawVolume
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories
+
+# To draw only gammas:
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+
+/vis/scene/endOfEventAction accumulate 1
+/vis/viewer/set/style wireframe
+#/vis/viewer/set/style surface
+#/vis/reviewKeptEvents
+#/vis/viewer/flush
+#/vis/ogl/set/displayListLimit 10000
+#/vis/viewer/pan 45 0 mm
+

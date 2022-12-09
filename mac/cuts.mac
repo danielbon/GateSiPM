@@ -1,0 +1,20 @@
+# CUTS
+/gate/physics/Gamma/SetCutInRegion      world  0.1 mm
+/gate/physics/Electron/SetCutInRegion   world  0.1 mm
+/gate/physics/Positron/SetCutInRegion   world  0.1 mm
+#/gate/physics/SetMaxStepSizeInRegion world  1 m
+
+/gate/physics/Gamma/SetCutInRegion      module 0.1 mm
+/gate/physics/Electron/SetCutInRegion   module 0.1 mm
+/gate/physics/Positron/SetCutInRegion   module 0.1 mm
+#/gate/physics/SetMaxStepSizeInRegion    module 1 m
+
+#/gate/physics/processes/PhotoElectric/setAugerElectron false
+#/gate/physics/processes/PhotoElectric/setDeltaRayCut 1 keV
+#/gate/physics/processes/PhotoElectric/setXRayCut 1 keV
+
+#/process/em/fluo true
+#/process/em/auger true
+#/process/em/pixe true
+
+/gate/physics/displayCuts

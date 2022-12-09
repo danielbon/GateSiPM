@@ -1,0 +1,21 @@
+
+/gate/source/addSource                 beamsource
+/gate/source/beamsource/setActivity    1e6 becquerel
+/gate/source/beamsource/gps/particle   gamma
+/gate/source/beamsource/gps/energytype Mono
+/gate/source/beamsource/gps/monoenergy 511 keV
+/gate/source/beamsource/gps/type       Beam
+/gate/source/beamsource/gps/centre     {X} {Y} -50 mm
+/gate/source/beamsource/gps/direction  0 0 1
+# the beam is travelling along the x-axis with sigma_r degrees dispersion
+#/gate/source/beamsource/gps/ang/rot1 1 0 0
+#/gate/source/beamsource/gps/ang/rot2 0 1 0
+#/gate/source/beamsource/gps/ang/type beam1d
+#/gate/source/beamsource/gps/ang/sigma_r 0.5 deg
+
+#/gate/source/beamsource/gps/ang/type iso
+#/gate/source/beamsource/gps/mintheta 0. deg
+#/gate/source/beamsource/gps/maxtheta 0. deg
+#/gate/source/beamsource/gps/minphi 180. deg
+#/gate/source/beamsource/gps/maxphi 180. deg
+
